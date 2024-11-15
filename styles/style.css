@@ -72,6 +72,8 @@
 }
 
 .cover__title {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   margin: 165px 50px 237px 50px;
   width: 1000px;
@@ -152,6 +154,11 @@
   bottom: 50px;
   outline: none;
   border: 1px solid #fff;
+}
+
+.bet-button-link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .section__lots {
@@ -315,10 +322,6 @@
 
 .letter-spacing_-1 {
   letter-spacing: -0.01em;
-}
-
-.letter-spacing_0 {
-  letter-spacing: 0;
 }
 
 .letter-spacing_2 {
