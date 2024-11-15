@@ -144,7 +144,7 @@
   line-height: 25.83px;
   text-align: center;
   background: none;
-  color: white;
+  color: #fff;
   position: absolute;
   width: 256px;
   height: 51px;
@@ -154,11 +154,6 @@
   bottom: 50px;
   outline: none;
   border: 1px solid #fff;
-}
-
-.bet-button-link {
-  text-decoration: none;
-  color: #fff;
 }
 
 .section__lots {
