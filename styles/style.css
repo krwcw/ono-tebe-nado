@@ -1,10 +1,9 @@
 .header {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
   width: 1100px;
-  height: 293px;
-  padding: 92px 24px 96px 24px;
-  background-color: white;
+  padding: 92px 49px 96px 24px;
+  background-color: #fff;
   color: #000000;
   font-size: 18px;
   font-weight: 400;
@@ -30,41 +29,37 @@
 }
 
 .header__logo {
-  margin-left: 42px;
-  width: 137px;
+  margin-right: 150px;
+  width: 138px;
   height: 105px;
 }
 
 .address {
+  font-style: normal;
+  margin-top: 7px;
+}
+
+.address-list {
   width: 240px;
-  height: 100px;
+  height: 100%;
   white-space: nowrap;
   list-style: none;
-  margin: 7px 0 0 53px;
   line-height: 1.32;
   letter-spacing: 0.1px;
 }
 
 .cover {
-  margin: 0;
-  padding: 0;
+  z-index: 0;
   position: relative;
   width: 1100px;
-  height: 757px;
+  min-height: 757px;
   color: #000000;
-}
-
-.cover__image {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
   background: url(../images/cover.jpg) no-repeat center / cover;
 }
 
 .overlay {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background-color: #000000;
@@ -74,9 +69,8 @@
 .cover__title {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  margin: 165px 50px 237px 50px;
-  width: 1000px;
+  padding: 165px 50px 135px 50px;
+  width: 100%;
   gap: 20px;
   font-size: 100px;
   font-weight: 700;
@@ -109,23 +103,31 @@
   letter-spacing: 0.6em;
 }
 
-.letter-spacing_60 {
+.letter-spacing_extended {
   letter-spacing: 0.6em;
 }
 
-.letter-spacing_30 {
+.letter-spacing_advanced {
   letter-spacing: 0.3em;
 }
 
-.letter-spacing_0 {
+.letter-spacing_normal {
   letter-spacing: 0;
 }
 
 .cover__description {
-  width: 645px;
-  height: 28px;
-  position: absolute;
-  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1100px;
+  height: 51px;
+  padding: 0 50px 0 78px;
+
+}
+
+.cover__description-text {
+  width: 637px;
   text-transform: uppercase;
   font-size: 22px;
   font-weight: 400;
@@ -133,34 +135,31 @@
   word-spacing: 18.5px;
   text-align: left;
   color: white;
-  left: 78px;
-  bottom: 62px;
+  text-align: center;
 }
 
 .bet-button {
+  font-family: Raleway, sans-serif;
   font-size: 22px;
   font-weight: 500;
   line-height: 25.83px;
   text-align: center;
   background: none;
   color: #fff;
-  position: absolute;
   width: 256px;
-  height: 51px;
-  z-index: 1;
+  min-height: 51px;
   align-content: center;
-  right: 50px;
-  bottom: 50px;
   outline: none;
   border: 1px solid #fff;
+  cursor: pointer;
 }
 
-.section__lots {
+.lots {
   width: 1100px;
-  height: 839px;
+  margin-bottom: 146px;
 }
 
-.section__lots__heading {
+.lots__heading {
   margin-top: 179px;
   margin-left: 64px;
   padding-bottom: 27px;
@@ -170,14 +169,20 @@
 }
 
 .lots__card-list {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 1100px;
   min-height: 563px;
-  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   padding: 0 24px 0 24px;
   margin-bottom: 30px;
   list-style: none;
+}
+
+.lots__card-list-item {
+  flex: 1 30%;
+  flex-grow: 1;
 }
 
 .card-link {
@@ -189,37 +194,24 @@
   width: 100%;
   height: 100%;
   position: relative;
+  z-index: -1;
 }
 
 .card_type_film {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
   background: url(../images/card-lot-01.jpg) no-repeat center / cover;
 }
 
 .card_type_book {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
   background: url(../images/card-lot-02.jpg) no-repeat center / cover;
 }
 
 .card_type_picture {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
   background: url(../images/card-lot-03.jpg) no-repeat center / cover;
 }
 
 .card__text {
   width: 100%;
   height: 100%;
-  position: absolute;
-  z-index: 1;
   color: white;
   display: flex;
   flex-direction: column;
@@ -238,13 +230,10 @@
 }
 
 .card__description {
-  font-family: Raleway;
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
 }
 
 .showmore {
@@ -258,33 +247,27 @@
   display: flex;
   flex-direction: row;
   width: 1100px;
-  height: 595px;
 }
 
 .about__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   width: 240px;
   height: 240px;
-  position: relative;
-  margin: 35px 71px 320px 71px;
+  margin: 35px 72px 320px 71px;
 }
 
 .black-circle {
-  position: absolute;
-  z-index: -1;
+  display: grid;
+  place-items: center;
   width: 240px;
   height: 240px;
-  background: #000000;
+  background: #000;
   border-radius: 50%;
 }
 
 .logo-white {
-  position: absolute;
-  width: 150px;
-  height: 120px;
-  z-index: 0;
+  width: 62%;
 }
 
 .about__text {
@@ -301,33 +284,10 @@
   line-height: 46.96px;
 }
 
-.about__description-top {
+.about__description {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0.01em;
-}
-
-.about__description-bottom {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.letter-spacing_-1 {
-  letter-spacing: -0.01em;
-}
-
-.letter-spacing_2 {
-  letter-spacing: 0.02em;
-}
-
-.letter-spacing_3 {
-  letter-spacing: 0.03em;
-}
-
-.letter-spacing_4 {
-  letter-spacing: 0.04em;
 }
 
 .margin-bottom {
@@ -337,24 +297,17 @@
 .footer {
   font-size: 18px;
   width: 1100px;
-  height: 366px;
-  padding: 180px 50px 88px 50px;
+  padding: 174px 50px 88px 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
 }
 
-.footer__address {
-  line-height: 24.3px;
-  letter-spacing: 0.01em;
-  list-style: none;
-}
-
 .footer__menu {
+  margin-top: 7px;
   line-height: 21.13px;
   text-align: center;
-  padding-left: 33px;
 }
 
 .footer__links-list {
@@ -362,23 +315,14 @@
 }
 
 .footer__media {
+  margin-top: 7px;
   display: flex;
   flex-direction: row;
   gap: 48px;
   list-style: none;
 }
 
-.youtube-link {
-  width: 48px;
-  height: 48px;
-}
-
-.vk-link {
-  width: 48px;
-  height: 48px;
-}
-
-.pinterest-link {
+.footer__media-logo {
   width: 48px;
   height: 48px;
 }
