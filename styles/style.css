@@ -67,6 +67,7 @@
 }
 
 .cover__title {
+  text-transform: uppercase;
   display: flex;
   flex-direction: column;
   padding: 165px 50px 135px 50px;
@@ -281,6 +282,7 @@
   font-size: 40px;
   font-weight: 700;
   line-height: 46.96px;
+  text-transform: uppercase;
 }
 
 .about__description {
